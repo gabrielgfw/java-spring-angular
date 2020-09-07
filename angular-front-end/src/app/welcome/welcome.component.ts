@@ -9,14 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
+  name = ''
 
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
 
-    console.log(this.route.snapshot.params['name']);
-    
+    // console.log(this.route.snapshot.params['name']);
+    this.name = this.route.snapshot.params['name'];
   }
 
 }
