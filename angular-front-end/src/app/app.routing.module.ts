@@ -6,7 +6,7 @@ import { ListTodosComponent } from './list-todos/list-todos.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RouteGuardService } from './service/route-guard.service';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
     // Redirect to Login Route.
     { path:'',
       redirectTo: '/login',
@@ -32,4 +32,4 @@ const appRoutes: Routes = [
 
 // export class AppRoutingModule { }
 
-export default appRoutes;
+// export default appRoutes;
