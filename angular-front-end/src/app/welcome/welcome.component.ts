@@ -11,6 +11,7 @@ import { WelcomeDataService } from '../service/data/welcome-data.service';
 export class WelcomeComponent implements OnInit {
 
   name = ''
+  welcomeMessageFromService:string
 
   constructor(private route: ActivatedRoute,
               private service: WelcomeDataService) {}
@@ -32,7 +33,8 @@ export class WelcomeComponent implements OnInit {
   }
 
   handleSuccessfulResponse(response) {
-    console.log(response);
+    this.welcomeMessageFromService = response.message;
+    // console.log(response.message);
   }
 
 
