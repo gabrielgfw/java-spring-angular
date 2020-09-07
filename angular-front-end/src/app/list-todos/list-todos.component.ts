@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+export class Todo {
+  constructor(
+    public id: number,
+    public description: string,
+    public done: boolean,
+    public targetDate: Date) {
+
+  }
+}
+
 @Component({
   selector: 'app-list-todos',
   templateUrl: './list-todos.component.html',
@@ -8,18 +18,9 @@ import { Component, OnInit } from '@angular/core';
 export class ListTodosComponent implements OnInit {
 
   todos = [
-    {
-      id : 1,
-      description : 'be a nice man'
-    },
-    {
-      id: 2,
-      description : 'learn guitar'
-    },
-    {
-      id : 3,
-      description : 'sleep well'
-    }
+    new Todo(1, 'be cool', false, new Date()),
+    new Todo(2, 'learn angular', false, new Date()),
+    new Todo(3, 'learn java spring', false, new Date())
   ]
 
   todo = {
