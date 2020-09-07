@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   handleLogin() {
     if(this.username === "Gabriel" && this.password === "genius") {
       // Redireciona para o Welcome Page.
-      this.router.navigate(['welcome'])
+      // Essa rota irá resgatar o atributo username e passar junto com a rota.
+      this.router.navigate(['welcome', this.username])
       this.invalidLogin = false
     } else {
       this.invalidLogin = true

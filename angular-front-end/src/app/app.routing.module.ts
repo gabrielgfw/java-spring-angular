@@ -6,7 +6,7 @@ import { ErrorComponent } from './error/error.component';
 const appRoutes: Routes = [
     { path:'login',
       component: LoginComponent },
-    { path:'welcome',
+    { path:'welcome/:name',
       component: WelcomeComponent },
     { path:'',
       redirectTo: '/login',
