@@ -3,6 +3,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 import { ListTodosComponent } from './list-todos/list-todos.component';
+import { LogoutComponent } from './logout/logout.component';
+import { RouteGuardService } from './service/route-guard.service';
 
 const appRoutes: Routes = [
     // Redirect to Login Route.
@@ -14,10 +16,15 @@ const appRoutes: Routes = [
       component: LoginComponent },
     // Welcome Page Route.
     { path:'welcome/:name',
-      component: WelcomeComponent },
+      component: WelcomeComponent, canActivate: [ RouteGuardService ] },
     // Todos Page Route.
     { path:'todos',
-      component: ListTodosComponent },
+      component: ListTodosComponent, canActivate: [ RouteGuardService ] },
+    // Logout Page Route.
+    { path: 'logout',
+      component: LogoutComponent, canActivate: [ RouteGuardService ] },
+
+
     // Não correspondendo nenhuma rota, será direcionado ao Error.
     { path:'**',
       component: ErrorComponent }
