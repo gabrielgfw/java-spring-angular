@@ -9,7 +9,8 @@
   </thead>
 
   <tbody>
-    <tr>
+    <!-- ng directive, possibilita aplicar lógica nas tags html. -->
+    <tr *ngFor="let todo of todos">
       <td>{{todo.id}}</td>
       <td>{{todo.description}}</td>
     </tr>
