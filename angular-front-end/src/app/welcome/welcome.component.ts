@@ -22,26 +22,37 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name'];
   }
 
+  // Função utilizada através do botão no component do welcome.
   getWelcomeMessage() {
-    console.log(this.service.executeHelloWorldBeanService());
-
+    // A função Subscribe, que realiza o acesso de forma assíncrona,
+    // pode receber dois parâmetros:
+    // O primeiro parâmetro será para tratar o response da requisição.
+    // O segundo parâmetro serve para tratamento de erros.
     this.service.executeHelloWorldBeanService().subscribe(
       response => this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
     );
-
-    console.log('final do getWelcomeMessage')
   }
 
+  // Função utilizada através do botão no component do welcome.
+  getWelcomeMessageWithParameter() {
+    // A função Subscribe, que realiza o acesso de forma assíncrona,
+    // pode receber dois parâmetros:
+    // O primeiro parâmetro será para tratar o response da requisição.
+    // O segundo parâmetro serve para tratamento de erros.
+    this.service.executeHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+  }
+
+
+  // Função criada para tratar o response da requisição do botão Welcome.
   handleSuccessfulResponse(response) {
     this.welcomeMessageFromService = response.message;
-    // console.log(response.message);
   }
-
+  // Função criada para tratar erros do response.
   handleErrorResponse(error) {
-    console.log(error)
-    console.log(error.error)
-    console.log(error.error.message)
     this.welcomeMessageFromService = error.error.message;
   }
 

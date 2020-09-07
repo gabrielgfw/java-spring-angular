@@ -21,4 +21,11 @@ export class WelcomeDataService {
     return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean')
   }
 
+  executeHelloWorldBeanServiceWithPathVariable(name) {
+    // Estamos requisitando um GET no endereços abaixo.
+    // É esperado que o response dessa requisição seja do tipo HelloWorldBean.
+    // Que nada mais é do que a classe criada logo acima, especificando o conteúdo esperado.
+    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world/path-variable/${name}`)
+  }
+
 }
