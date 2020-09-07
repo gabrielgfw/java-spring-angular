@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 import { ListTodosComponent } from './list-todos/list-todos.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const appRoutes: Routes = [
     // Redirect to Login Route.
@@ -18,6 +19,11 @@ const appRoutes: Routes = [
     // Todos Page Route.
     { path:'todos',
       component: ListTodosComponent },
+    // Logout Page Route.
+    { path: 'logout',
+      component: LogoutComponent },
+
+
     // Não correspondendo nenhuma rota, será direcionado ao Error.
     { path:'**',
       component: ErrorComponent }

@@ -27,4 +27,8 @@ export class HardcodedAuthenticationService {
 
   }
 
+  logOut() {
+    sessionStorage.removeItem('authenticatorUser');
+  }
+
 }
